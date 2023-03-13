@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="home.css">
+    <style>
+      
+      table{
+        margin: auto;
+        margin-top: 20%;
+        size: 500%;
+      }
+      table,
+      th, tr{
+        border-radius: 20px;
+        border-width: 10px;
+        border: 2px black;
+        border-style:double;
+        width: 33%;
+        text-align: center;
+        background-color:#9dabd9aa;
+        border-collapse:separate;
+        padding: 70px;
+        size: 100%;
+        text-align: center;
+        border-color: black;
+        font-size: 30px;
+        
+      }
+      td{
+        border-radius: 20px;
+        border-width: 10px;
+        border: 2px black;
+        border-style:double;
+        width: 33%;
+        text-align: center;
+        background-color:#6d6f97;
+        border-collapse:separate;
+        padding: 70px;
+        size: 100%;
+        text-align: center;
+        border-color: black;
+        font-size: 30px;
+        color:#f5f5f5;
+        
+      }
+      input{
+        padding:5px;
+        background-color:rgb(255, 255, 255);
+        width: 100%;
+        font-size: 30px;
+        color: #211f1f;;
+      }
+      input,button{
+        border-radius: 10px;
+        padding: 15px;
+      }
+    </style>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#"></a>
+      </div>
+      <ul>
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="knowmore.html">KNOW MORE</a></li>
+        <li><a href="addOut.html">ADD OUTFIT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class = "btns"></div>
+  <space>    </space>
+
+
+  <div class="img"></div>
+  <div class="center">
+    <div class="title">OUTFITS</div>
+    </div> 
+
+<script type="text/javascript">
+  var i=0;
+  var j=0;
+  const shirt=[];
+  const pant=[];
+  const washS=[];
+  const washP=[];
+  function sort(clicked_id)
+  { 
+    var cn=new String(document.getElementById("codename").value);
+    
+    if(document.getElementById("codename").value==="")
+    { 
+        alert('The codename is empty');
+    }
+    else
+    {
+      if(clicked_id=="shirt")
+      {
+        shirt.push(cn);
+        washS.push(0);
+        i++;
+        alert('The shirt is added');
+        
+      }
+      if(clicked_id=="pant")
+      {
+        pant.push(cn);
+        washP.push(0);
+        j++;
+        alert('The pant is added');
+      }
+      codename.value="";
+    }
+    
+
+  }  
+  
+    function disps()
+    {
+      document.getElementById("shirtPrint").innerHTML="Shirts are: "+shirt;
+    }
+    function dispp()
+    {
+      document.getElementById("pantPrint").innerHTML="Pants are: "+pant;
+    }
+    function random()
+    {
+        let a=shirt.length;
+        let b=pant.length;
+        var s2= Math.floor(Math.random() * b);
+        var s1 = Math.floor(Math.random() * a);
+        washS[s1]=washS[s1]+1;
+        washP[s2]=washP[s2]+1;
+        if(washS[s1]>2)
+        {
+            alert('Put '+shirt[s1]+' to laundry');
+            washS[s1]=0;
+        }
+        if(washP[s2]>2)
+        {
+            alert('Put '+pant[s2]+' to laundry');
+            washP[s2]=0;
+        }
+        document.getElementById("cs").innerHTML=shirt[s1];
+        document.getElementById("ps").innerHTML=pant[s2];
+    }
+
+  
+  </script>
+  <div class="table1">
+        <table>
+          <tr><td colspan="3">ADD OUTFITS</td></tr>
+            <tr><td>CODE NAME</td><td colspan="2"><input type="text" id="codename"/></td></tr>
+            <tr><td>OUTFIT TYPE</td><td><input type="button" name="shirt" value="Shirt" id="shirt" onclick="sort(this.id)"/></td><td><input type="button" name="pant" value="Pant" id="pant" onclick="sort(this.id)"/></td></tr>
+          </table>
+          <p>
+            <p>
+                
+            </p>
+          </p>
+          <div class="sk-cube-grid">
+            <div class="sk-cube sk-cube1"></div>
+            <div class="sk-cube sk-cube2"></div>
+            <div class="sk-cube sk-cube3"></div>
+            <div class="sk-cube sk-cube4"></div>
+            <div class="sk-cube sk-cube5"></div>
+            <div class="sk-cube sk-cube6"></div>
+            <div class="sk-cube sk-cube7"></div>
+            <div class="sk-cube sk-cube8"></div>
+            <div class="sk-cube sk-cube9"></div>
+          </div>
+          <table id="dispTable">
+            <tr><td>OUTFIT DISPLAY</td><td colspan="2"><input type="button" name="display" value="Display Shirts" id="displayS" onclick="disps()"/></td><td colspan="2" id="shirtPrint" ><input type="text"  value="YOU HAVE NOTHING HERE" disabled/></td></tr>
+            <tr><td>OUTFIT DISPLAY</td><td colspan="2"><input type="button" name="display" value="Display Pants" id="display" onclick="dispp()"/></td><td colspan="5" id= "pantPrint"><input type="text" value="YOU HAVE NOTHING HERE" disabled/></td></tr>
+          </table>
+          <x1>
+          <table>
+            <tr>><td colspan="4"><input type="button" name="choose" value="CLICK FOR OUTFIT" id="choose" onclick="random()"/></td></tr>
+            <p>
+
+            </p>
+            <div class="sk-cube-grid">
+                <div class="sk-cube sk-cube1"></div>
+                <div class="sk-cube sk-cube2"></div>
+                <div class="sk-cube sk-cube3"></div>
+                <div class="sk-cube sk-cube4"></div>
+                <div class="sk-cube sk-cube5"></div>
+                <div class="sk-cube sk-cube6"></div>
+                <div class="sk-cube sk-cube7"></div>
+                <div class="sk-cube sk-cube8"></div>
+                <div class="sk-cube sk-cube9"></div>
+              </div>
+            <td colspan="4">CHOSEN OUTFIT</td>
+            <tr><td>SHIRT:</td><td id="cs"></td><td>PANT:</td><td id="ps"></td></tr>
+          </table>
+        </x1>
+    </div>
+
+</body>
+</html>
